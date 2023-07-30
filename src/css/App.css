@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
+html {
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Lexend", sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.navbar {
+  padding: 2rem 0;
+  max-width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.language-menu {
+  background-color: #796eff;
+  width: 100%;
+  text-align: center;
+  padding: 0.7rem 0;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #796eff;
+  font-weight: 900;
+  font-size: 1.4rem;
+  margin-top: 0.08rem;
+  text-transform: uppercase;
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+li a {
+  margin-right: 3rem;
+  color: #494747;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+li a:hover {
+  color: #796eff;
+}
+
+li a:focus {
+  color: #796eff;
+}
+
+span {
+  color: #e07aff;
+}
+
+.flag-btn {
+  background-color: rgba(255, 255, 255, 0.0509803922);
+  border-radius: 50px;
+  padding: 0.4rem 1rem;
+}
+
+.flag-btn:hover {
+  background-color: #fff;
+}
+
+.burger div {
+  width: 19px;
+  height: 2px;
+  background-color: #494747;
+  margin: 4px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1350px) {
+  .navbar {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 992px) {
+  .navbar {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 992px) {
+  .navbar {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+  .ul {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+}/*# sourceMappingURL=App.css.map */
