@@ -16,11 +16,13 @@ export const CatDiv = () => {
     getData();
   }, []);
   return (
-    <div>
+    <div className="catDiv">
       <h2>categories:</h2>
-      {categories.map((cat, index) => (
-        <Links key={index} to={`/products/category/${cat}`} name={cat} />
-      ))}
+      <div className="product-container">
+        {categories.map((cat, index) => (
+          <Links key={index} to={`/products/category/${cat}`} name={cat} />
+        ))}
+      </div>
     </div>
   );
 };

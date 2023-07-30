@@ -1,15 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 $mainColor: #e07aff;
-$secColor: #796eff;
+$secColor: #ff6d24;
 $lightColor: #fff;
 $darkColor: #494747;
-
+@font-face {
+  font-family: "GEO  font";
+  src: url("../fonts/bpg_extrasquare_mtavruli_2009.ttf");
+}
 html {
   width: 100%;
 }
 body {
   overflow-x: hidden;
-  font-family: "Lexend", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
 }
 a {
@@ -18,6 +21,7 @@ a {
 .header {
   overflow-x: hidden;
   width: 100%;
+  background-color: #4e413b;
 }
 .navbar {
   padding: 2rem 0;
@@ -37,10 +41,24 @@ a {
   align-items: center;
   justify-content: center;
 }
-ul {
+.ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  a {
+    margin-right: 3rem;
+    color: $lightColor;
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: "GEO  font";
+  }
+  .ul a:hover {
+    color: $secColor;
+  }
+  .ul a:focus {
+    color: $secColor;
+  }
 }
 .logo {
   color: $secColor;
@@ -54,28 +72,19 @@ ul {
   border: none;
   cursor: pointer;
 }
-li a {
-  margin-right: 3rem;
-  color: $darkColor;
-  font-weight: 500;
-  font-size: 1rem;
-}
-li a:hover {
-  color: $secColor;
-}
-li a:focus {
-  color: $secColor;
-}
 span {
-  color: $mainColor;
+  color: $lightColor;
 }
 .flag-btn {
   background-color: #ffffff0d;
   border-radius: 50px;
   padding: 0.4rem 1rem;
 }
+.flag-btn {
+  background-color: $darkColor;
+}
 .flag-btn:hover {
-  background-color: #fff;
+  opacity: 0.8;
 }
 .burger div {
   width: 19px;
@@ -110,4 +119,102 @@ span {
   .burger {
     display: block;
   }
+}
+// end header
+.products-main {
+  max-width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  margin-top: 6rem;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+  align-items: center;
+}
+.product-grid img {
+  width: 350px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.product-grid img:first-child {
+  height: 200px;
+}
+.product-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+.products-main li {
+  text-decoration: none;
+  list-style: none;
+}
+.product-container {
+  .li-products {
+    margin: 1rem 0;
+  }
+  .li-products a {
+    background-color: #7a6eff46;
+    color: $darkColor;
+    border-radius: 10px;
+    padding: 0.4rem 0.9rem;
+  }
+}
+.catDiv {
+  background: #e2ded3;
+  border-radius: 16px;
+  margin-top: 10px;
+  margin-right: 2rem;
+  padding: 8rem 3rem;
+  height: 107vh;
+}
+.catDiv h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: $darkColor;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+}
+.product-container .li-products {
+  margin-top: 1.3rem;
+}
+.catDiv .li-products a {
+  color: $darkColor;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  background: #ffffffa7;
+}
+.product-container {
+  line-height: 1.65;
+}
+.p-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: -0.4rem 0 2rem 0;
+  color: $darkColor;
+}
+.product-title {
+  font-weight: 400;
+  color: #494747;
+  margin: 1.2rem 0;
+}
+.product-grid a {
+  background: #857671;
+  padding: 1.2rem 1rem;
+  display: block;
+  text-align: center;
+  color: #fff;
+  border-radius: 6px;
+}
+.product-grid a:hover {
+  background-color: $secColor;
+  color: $lightColor;
+  transition: all 0.3s ease;
+}
+.product-container a:hover {
+  background-color: $secColor;
+  color: $lightColor;
 }
