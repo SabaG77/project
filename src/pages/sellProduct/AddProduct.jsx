@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Buttons } from "../../globalComponents";
+import { Buttons, InputDiv, TextAreaDiv } from "../../globalComponents";
 
 export const AddProduct = () => {
   const [title, setTitle] = useState("");
@@ -7,40 +7,72 @@ export const AddProduct = () => {
   const [description, setDescription] = useState("");
 
   const changeTitle = (e) => {
-    setTitle(e.target.value);
+    let titleValue = e.target.value;
+    if (titleValue.length <= 12) {
+      setTitle(titleValue);
+    }
   };
 
   const changePrice = (e) => {
-    setPrice(e.target.value);
+    let priceValue = e.target.value;
+    priceValue = priceValue.replace(/[^\d.-]/g, "");
+    let dotCount = priceValue.split(".");
+    if (
+      dotCount.length > 2 ||
+      (dotCount[1] && dotCount[1].length > 2) ||
+      (dotCount[0] && parseInt(dotCount[0]) > 1000)
+    ) {
+      return;
+    }
+    setPrice(priceValue);
   };
 
   const changeDescription = (e) => {
-    setDescription(e.target.value);
+    let descValue = e.target.value;
+    if (descValue.length <= 120) {
+      setDescription(descValue);
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const apiData = await fetch("https://dummyjson.com/products/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: title,
+        price: price,
+        description: description,
+      }),
+    });
+    if (apiData.status === 200) {
+      alert("Product Added Successfully");
+    }
   };
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="title">Title</label>
-          <input type="text" value={title} onChange={changeTitle} />
-        </div>
-        <div>
-          <label htmlFor="price">Price</label>
-          <input
-            type="text"
-            value={price}
-            onChange={changePrice}
-            placeholder="0.00"
-          />
-        </div>
-        <div>
-          <label htmlFor="description">Description</label>
-          <textarea value={description} onChange={changeDescription} />
-        </div>
+        <InputDiv
+          htmlFor="title"
+          name="Title"
+          inType="text"
+          inValue={title}
+          inOnChange={changeTitle}
+        />
+        <InputDiv
+          htmlFor="price"
+          name="Price"
+          inType="text"
+          inValue={price}
+          inOnChange={changePrice}
+          inPlaceHolder="0.00"
+        />
+        <TextAreaDiv
+          htmlFor="description"
+          name="Description"
+          value={description}
+          onChange={changeDescription}
+        />
         <div>
           <Buttons type="submit" name="Add Product" />
         </div>

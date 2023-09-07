@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from "../../services";
-import { Links } from "../../globalComponents";
+import { Product } from "./components";
 import { useParams } from "react-router-dom";
 import { CatDiv } from "./components";
 
@@ -26,20 +26,7 @@ export const Products = () => {
   return (
     <div className="products-main">
       <CatDiv />
-      <div className="product-grid">
-        {products.map((pr, index) => (
-          <div key={index}>
-            <img src={pr.thumbnail} alt={pr.title} />
-            <h2 className="product-title">
-              {pr.title} — {pr.category}
-            </h2>
-            <p className="p-title">
-              {pr.price}$ — {pr.rating}
-            </p>
-            <Links to={`/products/${pr.id}`} name={"see more"} />
-          </div>
-        ))}
-      </div>
+      <Product products={products} />
     </div>
   );
 };

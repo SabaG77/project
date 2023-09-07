@@ -5,6 +5,8 @@ import {
   AddProduct,
   Contact,
   AboutUs,
+  EditProduct,
+  Favorites,
 } from "../pages";
 
 export const allRoutes = [
@@ -39,5 +41,13 @@ export const allRoutes = [
   {
     path: "/about-us",
     element: <AboutUs />,
+  },
+  {
+    path: "/edit-product/:prID",
+    element: <EditProduct />,
+  },
+  {
+    path: "/favorites",
+    element: <Favorites />,
   },
 ];

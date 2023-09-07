@@ -7,3 +7,4 @@ export { AddProduct } from "./sellProduct";
 export { Contact } from "./Contact";
 export { AboutUs } from "./aboutUs";
 export { EditProduct } from "./editProduct";
+export { Favorites } from "./favorites";
