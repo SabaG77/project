@@ -1,10 +1,8 @@
 export { Home } from "./home";
 export { Products } from "./products";
 export { Header } from "./header";
-export { Footer } from "./footer";
 export { ProductDetails } from "./productDetails";
 export { AddProduct } from "./sellProduct";
 export { Contact } from "./Contact";
-export { AboutUs } from "./aboutUs";
 export { EditProduct } from "./editProduct";
 export { Favorites } from "./favorites";

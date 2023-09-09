@@ -22,7 +22,7 @@ export const Favorites = () => {
   }, [favorites]);
 
   return (
-    <div>
+    <div className="favorite">
       <h1>Your Favorites:</h1>
       <Product products={favs} />
     </div>

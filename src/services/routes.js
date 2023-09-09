@@ -4,7 +4,6 @@ import {
   ProductDetails,
   AddProduct,
   Contact,
-  AboutUs,
   EditProduct,
   Favorites,
 } from "../pages";
@@ -37,10 +36,6 @@ export const allRoutes = [
   {
     path: "/contact",
     element: <Contact />,
-  },
-  {
-    path: "/about-us",
-    element: <AboutUs />,
   },
   {
     path: "/edit-product/:prID",

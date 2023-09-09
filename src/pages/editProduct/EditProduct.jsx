@@ -58,50 +58,52 @@ export const EditProduct = () => {
     fetchData();
   }, [prID]);
   return (
-    <div>
-      <h1> Edit Product </h1>
-      <Formik
-        initialValues={initialValues}
-        onSubmit={handleSubmit}
-        validationSchema={validationSchema}
-        enableReinitialize={true}
-      >
-        <Form>
-          <div>
-            <label htmlFor="title">Title</label>
-            <Field type="text" name="title" />
-            <ErrorMessage name="title" />
-          </div>
-          <div>
-            <label htmlFor="price">Price</label>
-            <Field
-              type="text"
-              name="price"
-              value={price}
-              onChange={changePrice}
-            />
-            <ErrorMessage name="price" />
-          </div>
-          <div>
-            <label htmlFor="description">Description</label>
-            <Field type="text" name="description" />
-            <ErrorMessage name="description" />
-          </div>
-          <div>
-            <label htmlFor="thumbnail">Thumbnail</label>
-            <Field type="text" name="thumbnail" />
-            <ErrorMessage name="thumbnail" />
-          </div>
-          <div>
-            <label htmlFor="category">Category</label>
-            <Field type="text" name="category" />
-            <ErrorMessage name="category" />
-          </div>
-          <div>
-            <Buttons type="submit" name="submit" />
-          </div>
-        </Form>
-      </Formik>
+    <div className="edit">
+      <div className="edit-top">
+        <h1> Edit Product </h1>
+        <Formik
+          initialValues={initialValues}
+          onSubmit={handleSubmit}
+          validationSchema={validationSchema}
+          enableReinitialize={true}
+        >
+          <Form>
+            <div>
+              <label htmlFor="title">Title</label>
+              <Field type="text" name="title" />
+              <ErrorMessage name="title" />
+            </div>
+            <div>
+              <label htmlFor="price">Price</label>
+              <Field
+                type="text"
+                name="price"
+                value={price}
+                onChange={changePrice}
+              />
+              <ErrorMessage name="price" />
+            </div>
+            <div>
+              <label htmlFor="description">Description</label>
+              <Field type="text" name="description" />
+              <ErrorMessage name="description" />
+            </div>
+            <div>
+              <label htmlFor="thumbnail">Thumbnail</label>
+              <Field type="text" name="thumbnail" />
+              <ErrorMessage name="thumbnail" />
+            </div>
+            <div>
+              <label htmlFor="category">Category</label>
+              <Field type="text" name="category" />
+              <ErrorMessage name="category" />
+            </div>
+            <div>
+              <Buttons type="submit" name="submit" />
+            </div>
+          </Form>
+        </Formik>
+      </div>
     </div>
   );
 };

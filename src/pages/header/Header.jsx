@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Navbar } from "./components";
+import { NavBar } from "./components";
 import { Buttons } from "../../globalComponents";
 import { LanguageContext } from "../../services";
 import { FlagKA } from "../../globalComponents";
@@ -9,11 +9,19 @@ export const Header = () => {
   return (
     <header className="header">
       <div className="language-menu">
-        <Buttons click={() => changeLanguage("en")} name={<FlagEN />} />
+        <Buttons
+          className="btn"
+          click={() => changeLanguage("en")}
+          name={<FlagEN />}
+        />
 
-        <Buttons click={() => changeLanguage("ka")} name={<FlagKA />} />
+        <Buttons
+          className="btn"
+          click={() => changeLanguage("ka")}
+          name={<FlagKA />}
+        />
       </div>
-      <Navbar langs={langs} language={language} />
+      <NavBar langs={langs} language={language} />
     </header>
   );
 };

@@ -13,21 +13,36 @@ export const Product = (props) => {
       {products.map((product, index) => (
         <div key={index}>
           <img src={product.thumbnail} alt={product.title} />
-          <FavoriteIcon
-            onClick={() => toggleFavorite(product.id)}
-            sx={{ color: isFavorite(product.id) ? "#27009c" : "#b1b1b1" }}
-          />
-          <ShoppingCartIcon />
+          <div className="icon-flex">
+            <FavoriteIcon
+              className="heart-icon"
+              onClick={() => toggleFavorite(product.id)}
+              sx={{
+                color: isFavorite(product.id) ? "#22d1ee" : "#b1b1b1",
+                fontSize: "2rem",
+                marginRight: ".5rem",
+              }}
+            />
+            <ShoppingCartIcon className="cart-icon" />
+          </div>
           <h2>
             <p className="product-title">
               {product.title} — {product.category}
             </p>
           </h2>
-          <p>
+          <p className="product-price">
             {product.price}$ — {product.rating}
           </p>
-          <Links to={`/products/${product.id}`} name={"See More"} />
-          <Links to={`/edit-product/${product.id}`} name={"Edit"} />
+          <Links
+            className="btn1"
+            to={`/products/${product.id}`}
+            name={"See More"}
+          />
+          <Links
+            className="cart-bg"
+            to={`/edit-product/${product.id}`}
+            name={"Edit"}
+          />
         </div>
       ))}
     </div>

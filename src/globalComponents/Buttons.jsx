@@ -1,7 +1,7 @@
 export const Buttons = (props) => {
-  const { click, name, type } = props;
+  const { click, name, type, className } = props;
   return (
-    <button className="btn" type={type} onClick={click}>
+    <button className={className} type={type} onClick={click}>
       {name}
     </button>
   );

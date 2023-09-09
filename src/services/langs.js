@@ -9,9 +9,6 @@ export const langs = {
     sellproduct: {
       title: "პროდუქტის გაყიდვა",
     },
-    aboutus: {
-      title: "ჩვენს შესახებ",
-    },
     contact: {
       title: "კონტაქტი",
     },
@@ -25,9 +22,6 @@ export const langs = {
     },
     sellproduct: {
       title: "Sell Product",
-    },
-    aboutus: {
-      title: "About Us",
     },
     contact: {
       title: "Contact",

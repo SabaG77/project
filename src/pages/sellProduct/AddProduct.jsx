@@ -51,7 +51,7 @@ export const AddProduct = () => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="forms" onSubmit={handleSubmit}>
         <InputDiv
           htmlFor="title"
           name="Title"
@@ -74,7 +74,7 @@ export const AddProduct = () => {
           onChange={changeDescription}
         />
         <div>
-          <Buttons type="submit" name="Add Product" />
+          <Buttons className="btn-wrapper" type="submit" name="Add Product" />
         </div>
       </form>
     </div>
